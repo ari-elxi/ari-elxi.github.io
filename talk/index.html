@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Talk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="traces-dark word-cursor-page">
+    <div class="page-corners" aria-hidden="true">
+      <img src="../visuals/topleft.png" alt="" class="home-corner home-corner--tl" />
+      <img src="../visuals/topright.png" alt="" class="home-corner home-corner--tr" />
+      <img src="../visuals/botleft.png" alt="" class="home-corner home-corner--bl" />
+      <img src="../visuals/botright.png" alt="" class="home-corner home-corner--br" />
+    </div>
+    <div
+      id="wordCursor"
+      class="word-cursor"
+      aria-hidden="true"
+      data-cursor-text="hi let's connect!"
+    >
+      hi
+    </div>
+    <header class="top-nav">
+      <a href="../index.html#landing">landing</a>
+      <a href="../index.html#home">home</a>
+      <a href="../things/index.html">things</a>
+      <a href="../thoughts/index.html">thoughts</a>
+      <a href="../traces/index.html">traces</a>
+      <a href="index.html">talk</a>
+    </header>
+    <main class="traces-page">
+      <header class="traces-header">
+        <h1 class="visually-hidden">talk</h1>
+        <img src="../visuals/talk.png" alt="" class="page-title-art" />
+      </header>
+
+      <section class="talk-page" aria-label="Talk">
+        <div class="talk-split">
+          <figure class="talk-split__photo">
+            <img
+              src="self.JPG"
+              alt=""
+              class="talk-split__photo-img"
+              width="800"
+              height="800"
+              loading="lazy"
+            />
+          </figure>
+
+          <div class="talk-split__panel">
+            <div class="talk-contact-intro">
+              <p class="talk-contact-intro__label">contact me at:</p>
+              <p class="talk-contact-intro__email">
+                <a href="mailto:arielsie@mit.edu">arielsie [at] mit [dot] edu</a>
+              </p>
+            </div>
+
+            <h2 class="talk-split__heading">leave a message</h2>
+
+            <div class="talk-message-box" role="status">
+              <p>
+                this feature is currently unavailable as i do not want to pay for a domain name yet.
+                please contact me through my email above
+              </p>
+            </div>
+
+            <div class="talk-compose-row">
+              <div class="talk-email-box" aria-hidden="true">email</div>
+              <button type="button" class="talk-send-btn" disabled>send</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="../word-cursor.js"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traces</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="traces-dark">
+    <div class="page-corners" aria-hidden="true">
+      <img src="../visuals/topleft.png" alt="" class="home-corner home-corner--tl" />
+      <img src="../visuals/topright.png" alt="" class="home-corner home-corner--tr" />
+      <img src="../visuals/botleft.png" alt="" class="home-corner home-corner--bl" />
+      <img src="../visuals/botright.png" alt="" class="home-corner home-corner--br" />
+    </div>
+    <header class="top-nav">
+      <a href="../index.html#landing">landing</a>
+      <a href="../index.html#home">home</a>
+      <a href="../things/index.html">things</a>
+      <a href="../thoughts/index.html">thoughts</a>
+      <a href="index.html">traces</a>
+      <a href="../talk/index.html">talk</a>
+    </header>
+    <main class="traces-page">
+      <header class="traces-header">
+        <h1 class="visually-hidden">traces</h1>
+        <img src="../visuals/traces.png" alt="" class="page-title-art" />
+        <p class="traces-disclaimer">
+          unfortunately i do not wanna pay for a domain so you can't see other people's traces.
+          i'll do it when i'm rich and famous i promise
+        </p>
+      </header>
+      <section id="tracesFlow" class="traces-flow" aria-live="polite"></section>
+    </main>
+    <script src="../traces.js"></script>
+  </body>
+</html>

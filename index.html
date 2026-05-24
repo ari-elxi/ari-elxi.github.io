@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Killing Cosmic Guilt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="dust"></canvas>
+
+    <main class="world">
+      <section class="gate" id="landing" aria-live="polite">
+        <h1 id="gateTitle">Enter the archive</h1>
+        <p id="gateDescription" class="description"></p>
+        <div id="methodArea" class="method-area"></div>
+        <p id="gateHint" class="hint"></p>
+      </section>
+
+      <section class="home hidden" id="home">
+        <div class="home-below-spray">
+          <div class="home-corners" aria-hidden="true">
+            <img src="visuals/topleft.png" alt="" class="home-corner home-corner--tl" />
+            <img src="visuals/topright.png" alt="" class="home-corner home-corner--tr" />
+            <img src="visuals/botleft.png" alt="" class="home-corner home-corner--bl" />
+            <img src="visuals/botright.png" alt="" class="home-corner home-corner--br" />
+          </div>
+
+          <header class="home-hero">
+            <p class="home-welcome">welcome</p>
+            <h2 class="visually-hidden">arielsie archive</h2>
+            <div class="home-title-row">
+              <img src="visuals/selficon.png" alt="" class="home-self-icon" />
+              <img src="visuals/title.png" alt="arielsie archive" class="home-title-art" />
+              <div class="home-can-spacer" aria-hidden="true"></div>
+            </div>
+            <div class="home-lede">
+              <p>
+                <strong class="home-lede__name">Yuanxi Arielsie Ari Elle Elsie Ariel Li</strong>
+                is an avid daydreamer who loves to invent
+                things in her head. Such as her name. Her friends and family occasionally catch her
+                pacing in small circles with headphones on while mumbling something, and some of them
+                find it a bit terrifying, so she has learned to not do that in front of people. When
+                she is not doing that, Ari (preferred name at the moment) also enjoys making
+                doohickies, learning physics and philosophy, and writing about people, animals, or
+                societies pacing in a circle (literally and metaphorically). She believes that art can
+                save the world. You can save the world. She also wishes to own four rats, along with a
+                company that can revolutionize the human experience, one day.
+              </p>
+              <p>
+                For now, just have some fun with the four rats on this site.
+              </p>
+            </div>
+          </header>
+
+          <div class="home-modules">
+            <a class="module-card traces-link" id="thingsCard" href="things/index.html">
+              <span class="visually-hidden">things</span>
+              <img src="visuals/thingsrat.png" alt="" />
+            </a>
+            <a class="module-card traces-link" id="thoughtsCard" href="thoughts/index.html">
+              <span class="visually-hidden">thoughts</span>
+              <img src="visuals/thoughtsrat.png" alt="" />
+            </a>
+            <a class="module-card traces-link" id="tracesCard" href="traces/index.html">
+              <span class="visually-hidden">traces</span>
+              <img src="visuals/tracesrat.png" alt="" />
+            </a>
+            <a class="module-card traces-link" id="talkCard" href="talk/index.html">
+              <span class="visually-hidden">talk</span>
+              <img src="visuals/talkrat.png" alt="" />
+            </a>
+          </div>
+        </div>
+
+        <div class="home-can-wrap" aria-hidden="true">
+          <img
+            src="visuals/can.png"
+            alt=""
+            class="home-can"
+            draggable="false"
+          />
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

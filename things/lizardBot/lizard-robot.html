@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>An Underactuated Bipedal Lizard Robot — Things</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body class="traces-dark">
+    <div class="page-corners" aria-hidden="true">
+      <img src="../../visuals/topleft.png" alt="" class="home-corner home-corner--tl" />
+      <img src="../../visuals/topright.png" alt="" class="home-corner home-corner--tr" />
+      <img src="../../visuals/botleft.png" alt="" class="home-corner home-corner--bl" />
+      <img src="../../visuals/botright.png" alt="" class="home-corner home-corner--br" />
+    </div>
+    <header class="top-nav">
+      <a href="../../index.html#landing">landing</a>
+      <a href="../../index.html#home">home</a>
+      <a href="../index.html">things</a>
+      <a href="../../thoughts/index.html">thoughts</a>
+      <a href="../../traces/index.html">traces</a>
+      <a href="../../talk/index.html">talk</a>
+    </header>
+    <main class="traces-page things-project-page">
+      <p class="things-back">
+        <a href="../index.html">← things</a>
+      </p>
+      <header class="traces-header things-project-page__header">
+        <h1 class="things-project-page__headline">
+          An Underactuated Bipedal Lizard Robot
+        </h1>
+      </header>
+
+      <article class="things-embed-stack" aria-label="Lizard robot media">
+        <figure class="things-embed things-embed--image">
+          <img
+            src="robot.jpeg"
+            alt="Photo of the lizard-inspired robot"
+            class="things-embed__img"
+          />
+        </figure>
+
+        <section class="things-embed things-embed--video" aria-label="Demo video">
+          <video class="things-embed__video" controls playsinline preload="metadata">
+            <source src="LIZARDDEMO.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </section>
+
+        <section class="things-embed things-embed--pptx" aria-label="Presentation file">
+          <h2 class="things-embed__label">poster / slides (.pptx)</h2>
+          <p class="things-embed__note">
+            Browsers can’t show PowerPoint inline from a local folder. Download and open in PowerPoint
+            or Keynote.
+          </p>
+          <a class="things-embed__download" href="LIZARDPOSTER.pptx" download
+            >Download LIZARDPOSTER.pptx</a
+          >
+        </section>
+
+        <section class="things-embed things-embed--pdf" aria-label="Paper PDF">
+          <h2 class="things-embed__label">paper (pdf)</h2>
+          <iframe
+            class="things-embed__pdf"
+            title="Lizard robot paper PDF"
+            src="robotPaper.pdf"
+          ></iframe>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
