@@ -7,14 +7,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      if (location.hash === "#home") {
+        document.documentElement.classList.add("direct-home");
+      }
+    </script>
   </head>
   <body>
-    <canvas id="dust"></canvas>
-
     <main class="world">
       <section class="gate" id="landing" aria-live="polite">
         <h1 id="gateTitle">Enter the archive</h1>
@@ -91,5 +94,6 @@
     </main>
 
     <script src="script.js"></script>
+    <script src="pointer-hover.js"></script>
   </body>
 </html>

@@ -402,60 +402,6 @@ function setupRandomMethod() {
   setupDrawForNextVisitorMethod();
 }
 
-// Background star-dust animation for the non-dark rituals.
-const canvas = document.getElementById("dust");
-const ctx = canvas.getContext("2d");
-const particles = [];
-const particleCount = 90;
-
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-
-function createParticle() {
-  const speed = Math.random() * 0.2 + 0.05;
-  return {
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    radius: Math.random() * 1.8 + 0.3,
-    vx: (Math.random() - 0.5) * speed,
-    vy: (Math.random() - 0.5) * speed,
-    alpha: Math.random() * 0.8 + 0.1,
-  };
-}
-
-function seedParticles() {
-  particles.length = 0;
-  for (let i = 0; i < particleCount; i += 1) particles.push(createParticle());
-}
-
-function drawParticles() {
-  if (document.body.classList.contains("gate-dark")) {
-    requestAnimationFrame(drawParticles);
-    return;
-  }
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  for (const p of particles) {
-    p.x += p.vx;
-    p.y += p.vy;
-    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(210, 188, 255, ${p.alpha})`;
-    ctx.fill();
-  }
-  requestAnimationFrame(drawParticles);
-}
-
-window.addEventListener("resize", () => {
-  resizeCanvas();
-  seedParticles();
-});
-
-resizeCanvas();
-seedParticles();
 if (window.location.hash === "#home") {
   entered = true;
   gate.style.display = "none";
@@ -464,7 +410,6 @@ if (window.location.hash === "#home") {
 } else {
   setupRandomMethod();
 }
-requestAnimationFrame(drawParticles);
 
 const SPRAY_COLORS = ["#a855f7", "#ec4899", "#60a5fa", "#ffffff"];
 

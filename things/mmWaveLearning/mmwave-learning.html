@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mmWave-to-3D Occupancy — Things</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body class="traces-dark">
+    <div class="page-corners" aria-hidden="true">
+      <img src="../../visuals/topleft.png" alt="" class="home-corner home-corner--tl" />
+      <img src="../../visuals/topright.png" alt="" class="home-corner home-corner--tr" />
+      <img src="../../visuals/botleft.png" alt="" class="home-corner home-corner--bl" />
+      <img src="../../visuals/botright.png" alt="" class="home-corner home-corner--br" />
+    </div>
+    <header class="top-nav">
+      <a href="../../index.html#landing">landing</a>
+      <a href="../../index.html#home">home</a>
+      <a href="../index.html">things</a>
+      <a href="../../thoughts/index.html">thoughts</a>
+      <a href="../../traces/index.html">traces</a>
+      <a href="../../talk/index.html">talk</a>
+    </header>
+    <main class="traces-page things-project-page">
+      <p class="things-back">
+        <a href="../index.html">← things</a>
+      </p>
+      <header class="traces-header things-project-page__header">
+        <h1 class="things-project-page__headline things-project-page__headline--long">
+          mmWave-to-3D Occupancy: Summer 2026
+        </h1>
+      </header>
+
+      <article class="things-project-body traces-flow">
+        <figure class="things-embed things-embed--image things-project-body__hero">
+          <img
+            src="bodyPhoto.png"
+            alt=""
+            class="things-embed__img"
+            loading="lazy"
+          />
+        </figure>
+
+        <div class="things-project__statement">
+          <p>
+            This summer I&rsquo;ve been working in the Signal Kinetics Lab under Prof. Fadel Adib and
+            Dr. Laura Dodds on 3D occupancy prediction from mmWave radar: recovering volumetric scene
+            structure from sparse radar returns rather than optical sensors.
+          </p>
+          <p>The work splits into two coupled pipelines:</p>
+          <p>
+            <strong>Training pipeline.</strong> I&rsquo;ve been debugging and extending the NRDK
+            deep-learning pipeline that maps raw mmWave radar data to 3D occupancy predictions. This
+            has involved diagnosing training instability (loss divergence, unstable gradients across
+            configurations), reworking data augmentation to improve generalization, and standing up the
+            GPU compute environment &mdash; including getting the training stack working correctly on
+            Blackwell-generation hardware, which required working around driver/library compatibility
+            issues not yet well-documented for this class of GPU.
+          </p>
+          <p>
+            <strong>Synthetic data-generation pipeline.</strong> Since real mmWave-labeled 3D
+            occupancy data is scarce, a large part of the work is generating usable synthetic training
+            data. I integrated OmniObject3D as an asset source for more diverse synthetic scenes, and
+            spent significant time on sim-to-real domain gap analysis &mdash; characterizing where
+            synthetic radar returns diverge from real-world signal characteristics (noise profiles,
+            multipath, material reflectivity) so the gap doesn&rsquo;t tank downstream model
+            performance. I also implemented noise injection to make training more robust to real-world
+            signal artifacts, resolved git merge conflicts across parallel pipeline development, and
+            built out multi-GPU parallel generation to make dataset scale tractable.
+          </p>
+          <p>
+            Development runs on the MIT Media Lab&rsquo;s matlaber compute cluster
+            (Kerberos-authenticated), so a nontrivial fraction of the summer has also gone into
+            cluster/systems work &mdash; environment setup, auth, and getting distributed jobs to run
+            reliably.
+          </p>
+          <p>
+            The core technical bet: mmWave radar is low-cost, works in darkness, penetrates occlusions,
+            and is inherently privacy-preserving compared to camera-based sensing &mdash; but the
+            inverse problem (sparse, noisy reflections &rarr; dense 3D occupancy) is hard, and the
+            sim-to-real gap is the main bottleneck standing between synthetic-data-scale training and
+            real-world deployment.
+          </p>
+          <p>
+            <a
+              class="things-project-repo-note__link"
+              href="https://www.media.mit.edu/projects/reconstructing-hidden-objects-with-wireless-signals-1/overview/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Learn more about the lab&rsquo;s work here.</a
+            >
+          </p>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
