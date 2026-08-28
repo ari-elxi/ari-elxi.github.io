@@ -650,3 +650,67 @@ function setupDraggableCan() {
 }
 
 setupDraggableCan();
+
+async function setupSelfConvo() {
+  const btn = document.querySelector(".home-self-btn");
+  const bubble = document.querySelector(".home-convo-bubble");
+  const bubbleText = document.querySelector(".home-convo-bubble__text");
+  if (!btn || !bubble || !bubbleText) return;
+
+  const FADE_MS = 400;
+  const HOLD_MS = 1300;
+  let hideTimer = null;
+  let facts = [];
+
+  try {
+    const response = await fetch("funFacts.txt");
+    if (response.ok) {
+      const raw = await response.text();
+      facts = raw
+        .split(/\r?\n/)
+        .map((line) => line.trim())
+        .filter(Boolean);
+    }
+  } catch {
+    facts = [];
+  }
+
+  if (!facts.length) {
+    facts = ["Hello, welcome to my website!"];
+  }
+
+  let factIndex = 0;
+  let lastLineRepeatsLeft = 0;
+
+  function nextFact() {
+    const lastIndex = facts.length - 1;
+
+    if (lastLineRepeatsLeft > 0) {
+      lastLineRepeatsLeft -= 1;
+      if (lastLineRepeatsLeft === 0) {
+        factIndex = 0;
+      }
+      return facts[lastIndex];
+    }
+
+    const fact = facts[factIndex];
+    if (factIndex === lastIndex) {
+      lastLineRepeatsLeft = 4;
+      factIndex = 0;
+    } else {
+      factIndex += 1;
+    }
+    return fact;
+  }
+
+  btn.addEventListener("click", () => {
+    clearTimeout(hideTimer);
+    bubbleText.textContent = nextFact();
+    bubble.classList.add("is-visible");
+    hideTimer = setTimeout(() => {
+      bubble.classList.remove("is-visible");
+    }, FADE_MS + HOLD_MS);
+  });
+}
+
+setupSelfConvo();

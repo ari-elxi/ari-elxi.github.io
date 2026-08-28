@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Arielsie Hand";
+  src:
+    url("Arielsiehand-Regular.otf") format("opentype"),
+    url("Arielsiehand-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg: #080611;
   --bg-soft: #110d22;
@@ -7,6 +17,7 @@
   --accent-2: #ec4899;
   --font-body: "Space Grotesk", system-ui, sans-serif;
   --font-title: "Archivo Black", system-ui, sans-serif;
+  --font-hand: "Arielsie Hand", cursive;
   --home-rat-max-height: 48vh;
   /* Module pages only (~60% of homepage title scale) */
   --module-title-height: min(calc(38vh * 0.6), calc(380px * 0.6));
@@ -66,6 +77,22 @@ body.word-cursor-page a,
 body.word-cursor-page button,
 body.word-cursor-page [role="button"] {
   cursor: none;
+}
+
+html.mouse-unlocked body,
+html.mouse-unlocked body * {
+  cursor: var(--site-mouse-cursor, auto) !important;
+}
+
+html.mouse-unlocked body a,
+html.mouse-unlocked body button,
+html.mouse-unlocked body [role="button"],
+html.mouse-unlocked body label,
+html.mouse-unlocked body select,
+html.mouse-unlocked body summary,
+html.mouse-unlocked body input[type="checkbox"],
+html.mouse-unlocked body input[type="radio"] {
+  cursor: var(--site-mouse-cursor-pointer, pointer) !important;
 }
 
 #home #sprayTrace {
@@ -464,12 +491,73 @@ body.gate-dark .hint {
   border: 0;
 }
 
-.home-self-icon {
+.home-self-wrap {
+  position: relative;
   flex: 0 0 auto;
+}
+
+.home-self-btn {
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  line-height: 0;
+  cursor: inherit;
+}
+
+body.home-active .home-self-btn {
+  cursor: url("visuals/mouse.png") 16 16, pointer;
+}
+
+.home-self-icon {
+  display: block;
   width: clamp(52px, 12vw, 120px);
   max-height: min(22vh, 160px);
   height: auto;
   object-fit: contain;
+}
+
+.home-convo-bubble {
+  position: absolute;
+  left: calc(60% + clamp(0.25rem, 1vw, 0.65rem));
+  top: 30%;
+  transform: translateY(-50%);
+  width: clamp(120px, 70vw, 450px);
+  max-height: min(100vh, 300px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+}
+
+.home-convo-bubble__bg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(100vh, 300px);
+  object-fit: contain;
+}
+
+.home-convo-bubble__text {
+  position: absolute;
+  left: 14%;
+  right: 10%;
+  top: 16%;
+  bottom: 30%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-hand);
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  line-height: 1;
+  color: #000;
+}
+
+.home-convo-bubble.is-visible {
+  opacity: 1;
 }
 
 .home-welcome {

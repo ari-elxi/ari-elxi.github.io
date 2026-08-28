@@ -39,7 +39,19 @@
             <p class="home-welcome">welcome</p>
             <h2 class="visually-hidden">arielsie archive</h2>
             <div class="home-title-row">
-              <img src="visuals/selficon.png" alt="" class="home-self-icon" />
+              <div class="home-self-wrap">
+                <button type="button" class="home-self-btn" aria-label="Show conversation">
+                  <img src="visuals/selficon.png" alt="" class="home-self-icon" />
+                </button>
+                <div class="home-convo-bubble" aria-hidden="true">
+                  <img
+                    src="visuals/convo.png"
+                    alt=""
+                    class="home-convo-bubble__bg"
+                  />
+                  <p class="home-convo-bubble__text"></p>
+                </div>
+              </div>
               <img src="visuals/title.png" alt="arielsie archive" class="home-title-art" />
               <div class="home-can-spacer" aria-hidden="true"></div>
             </div>
@@ -93,6 +105,7 @@
       </section>
     </main>
 
+    <script src="click-cursor.js"></script>
     <script src="script.js"></script>
     <script src="pointer-hover.js"></script>
   </body>
