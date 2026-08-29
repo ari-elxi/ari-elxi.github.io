@@ -52,13 +52,13 @@ html.direct-home body {
 
 body.home-active {
   background: #000;
-  cursor: url("visuals/mouse.png") 16 16, auto;
+  cursor: url("visuals/mouse-cursor.png") 16 16, auto;
 }
 
 body.home-active a,
 body.home-active button,
 body.home-active [role="button"] {
-  cursor: url("visuals/mouse.png") 16 16, pointer;
+  cursor: url("visuals/mouse-cursor.png") 16 16, pointer;
 }
 
 body.gate-dark {
@@ -507,7 +507,7 @@ body.gate-dark .hint {
 }
 
 body.home-active .home-self-btn {
-  cursor: url("visuals/mouse.png") 16 16, pointer;
+  cursor: url("visuals/mouse-cursor.png") 16 16, pointer;
 }
 
 .home-self-icon {
